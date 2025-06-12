@@ -1,0 +1,89 @@
+body {
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+h1, h2 {
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+button {
+  font-size: 1.2rem;
+  border-radius: 30px;
+  padding: 10px 25px;
+}
+.memory-card, .mural-card {
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+.memory-card.flip, .mural-card.flip {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.card-front {
+  background-color: #fff;
+}
+.card-back {
+  background-color: #fff0f5;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #d63384;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.mural-header {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  border-radius: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.btn-voltar {
+  margin-top: 30px;
+  background-color: #fff;
+  color: #ff69b4;
+  border: none;
+}
+.btn-voltar:hover {
+  background-color: #ffe4ec;
+}
+.modal-content {
+  background: linear-gradient(145deg, #ffe0ec, #fff1f7);
+  border-radius: 20px;
+  border: 2px solid #ffc3dc;
+}
+.modal-header, .modal-footer {
+  border: none;
+}
+.modal-title {
+  color: #d63384;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+}
+.modal-body {
+  font-size: 1.1rem;
+  color: #b0005f;
+}
