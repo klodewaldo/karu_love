@@ -57,11 +57,11 @@ const combinacoes = [
   { img: "2", msg: "FOTO ANTES DO LANCHE 💫" },
   { img: "3", msg: "PRIMEIRO PASSEIO COM AZULZINHA 😍" },
   { img: "4", msg: "MOMENTO FELIZ NO HOP ANTES DE SE MOLHAR 💕" },
-  { img: "5", msg: "NOSSO PRIMEIRO PASSEIO" },
-  { img: "6", msg: "UMA PAUSA ANTES DO HOP PARA CAFE" },
-  { img: "7", msg: "FOTO LINDA COM A RODA NO FUNDO" },
-  { img: "8", msg: "A MAIS RECENTE UMA DESTINHA JUNINA" },
-  { img: "9", msg: "NOSSO PARQUE AQUATICO K K K " }
+  { img: "5", msg: "NOSSO PRIMEIRO PASSEIO👩🏻‍🤝‍👨🏿" },
+  { img: "6", msg: "UMA PAUSA ANTES DO HOP PARA CAFE🥐" },
+  { img: "7", msg: "FOTO LINDA COM A RODA NO FUNDO🧿" },
+  { img: "8", msg: "A MAIS RECENTE UMA FESTINHA JUNINA🎊" },
+  { img: "9", msg: "NOSSO PARQUE AQUATICO K K K 🚿" }
 ];
 
 let flipped = [];
