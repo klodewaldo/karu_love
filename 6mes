@@ -1,1 +1,163 @@
-a
+<!DOCTYPE html><html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FELIZ 6 MESES AMOR</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #ffeef2;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #e91e63;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #e91e63;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d81b60;
+    }
+    .hidden {
+      display: none;
+    }
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="home">
+    <h1>FELIZ 6 MESES AMOR 💖</h1>
+    <button onclick="startQuiz()">Começar Quiz</button>
+  </div>  <div class="container hidden" id="quiz">
+    <h2 id="question"></h2>
+    <div id="answers"></div>
+  </div>  <div class="modal hidden" id="modal">
+    <div class="modal-content">
+      <p id="modal-text"></p>
+      <button onclick="nextQuestion()">Continuar</button>
+    </div>
+  </div>  <script>
+    const questions = [
+      {
+        q: "Quando oficializamos o pedido de namoro?",
+        options: ["15 de janeiro", "18 de dezembro", "14 de janeiro", "16 de janeiro"],
+        correct: 0,
+        message: "Amorzão, dia 15 de janeiro de 2025 selamos nosso relacionamento, na sala da minha casa onde nossa história como namorada e namorado deu um start ❤️"
+      },
+      {
+        q: "Qual foi o primeiro filme que assistimos juntos?",
+        options: ["homem aranha de volta ao lar", "wolverine e deadpool", "rei do show", "uma noite no museu"],
+        correct: 1,
+        message: "O amor, grande filme violento e engraçado do wolverine e deadpool que inclusive pedimos uma pizza para acompanhar 🍕 onde tudo começou"
+      },
+      {
+        q: "Qual foi o lugar que passamos nosso 1 mês de namoro juntos?",
+        options: ["praça da nossa senhora de Fátima", "parque do sol", "na minha casa", "parque ecológico"],
+        correct: 3,
+        message: "O amor, nosso primeiro piquenique ajhahhah primeira vez comemorando juntos nosso mês de namoro 🤗"
+      },
+      {
+        q: "Amor qual era o nome do cachorro que achamos quando fomos passear com a azulzinha?",
+        options: ["doguinho", "raposinho", "lobinho", "cãozinho"],
+        correct: 2,
+        message: "Amor o lobinho ahhaaha ele faz parte da nossa história, nosso primeiro companheiro que apareceu do nada 🐕"
+      },
+      {
+        q: "Amor, quantos dias de namoro estamos chegando?",
+        options: ["178 dias", "181 dias", "183 dias", "190 dias"],
+        correct: 1,
+        message: "O amor são 181 dias ao seu lado como seu parceiro, 181 dias do sim mais feliz que ouvi em toda minha vida, onde minha vida mudou para melhor e pude selar o relacionamento com o amor da minha vida"
+      }
+    ];
+
+    let current = 0;
+
+    function startQuiz() {
+      document.getElementById("home").classList.add("hidden");
+      document.getElementById("quiz").classList.remove("hidden");
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = questions[current];
+      document.getElementById("question").innerText = q.q;
+      const answersDiv = document.getElementById("answers");
+      answersDiv.innerHTML = "";
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(idx);
+        answersDiv.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(idx) {
+      const q = questions[current];
+      if (idx === q.correct) {
+        showModal(q.message);
+      } else {
+        showModal("Amorzão ahhahaah errou 🤭😛😛😛 volte do começo", true);
+      }
+    }
+
+    function showModal(msg, isWrong = false) {
+      document.getElementById("modal-text").innerText = msg;
+      document.getElementById("modal").classList.remove("hidden");
+      if (isWrong) {
+        document.querySelector("#modal button").onclick = () => location.reload();
+      } else {
+        document.querySelector("#modal button").onclick = () => nextQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      document.getElementById("modal").classList.add("hidden");
+      current++;
+      if (current < questions.length) {
+        showQuestion();
+      } else {
+        showFinal();
+      }
+    }
+
+    function showFinal() {
+      document.getElementById("quiz").innerHTML = `
+        <h2>FELIZ 6 MESES, AMOR! 💘</h2>
+        <p>Você acertou todas! 🥰</p>
+        <img src="imagem_final.jpg" alt="Imagem final" style="width:100%; max-width:400px; border-radius:12px;">
+      `;
+    }
+  </script></body>
+</html>
